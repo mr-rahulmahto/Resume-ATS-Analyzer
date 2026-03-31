@@ -1,0 +1,37 @@
+.sidebar{
+    flex: 0.2;
+    background-color: #dc173e;
+    color: white;
+    height: 100vh;
+    flex-shrink: 0;
+}
+
+.sideBarIcon{
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sideTopContent{
+    font-size: 26px;
+}
+.sideBarOptionBlock{
+   margin-top: 30px;
+}
+.sideBarOption{
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+    color: aliceblue;
+    text-decoration: none;
+}
+.sideBarOption.active {
+  background-color: #6d1010;
+  color: rgb(243, 243, 247);
+  border-left: 3px solid rgb(249, 247, 247);
+  /* your active styles */
+}
