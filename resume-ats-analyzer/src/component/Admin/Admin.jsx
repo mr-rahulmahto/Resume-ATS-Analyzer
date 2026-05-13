@@ -1,7 +1,7 @@
 import React from 'react'
 import './admin.css'
 import Skeleton from '@mui/material/Skeleton'
-import WithAuthHOC from '../../utils/HOC/withAuthHOC'
+import WithAuthHOC from '../../utils/HOC/WithAuthHOC'
 import { useState, useEffect } from 'react'
 import axios from '../../utils/axios'
 

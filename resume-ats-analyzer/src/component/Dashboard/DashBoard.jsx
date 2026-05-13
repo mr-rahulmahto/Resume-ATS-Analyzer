@@ -2,11 +2,12 @@ import React from "react";
 import "./dashboard.css";
 import CreditScoreIcon from "@mui/icons-material/CreditScore";
 import Skeleton from "@mui/material/Skeleton";
-import WithAuthHOC from "../../utils/HOC/withAuthHOC";
+import WithAuthHOC from "../../utils/HOC/WithAuthHOC";
 import { useState } from "react";
 import axios from "../../utils/axios";
 import { useContext } from "react";
 import { AuthContext } from "../../utils/AuthContext";
+import userImage from "../../assets/user.png";
 
 const DashBoard = () => {
 
@@ -97,10 +98,10 @@ const DashBoard = () => {
           <div>Analyzer With AI </div>
           <img
             className="profileImg"
-            src={userInfo?.photoUrl || '../src/assets/user.png'}  // fallback image
+            src={userInfo?.photoUrl || userImage}  // fallback image
             alt="UserImage"
             onError={(e) => {
-              e.target.src = '../src/assets/user.png';  // if URL breaks
+              e.target.src = userImage;  // if URL breaks
             }}
           />
           

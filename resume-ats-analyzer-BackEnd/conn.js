@@ -1,7 +1,14 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
+
+const mongoUri = process.env.MONGO_URI;
+
+if (!mongoUri) {
+    throw new Error('MONGO_URI environment variable is required');
+}
 
 mongoose.connect(
-    'mongodb+srv://rahulmahto2486_db_user:AZ5hPJ1ZkhZXs1F7@cluster0.dkowy4c.mongodb.net/yourDatabaseName?retryWrites=true&w=majority&appName=Cluster0'
+    mongoUri
 )
 .then(() => {
     console.log("Database Connected Successfully!!");

@@ -1,10 +1,11 @@
+import React from "react"
 import { useEffect , useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../AuthContext"
 
 const WithAuthHOC = (WrappedComponent) => { 
 
-    return (props) => {
+    const AuthenticatedComponent = (props) => {
         const navigate = useNavigate();
         const {setLogin} = useContext(AuthContext)
         
@@ -17,10 +18,12 @@ const WithAuthHOC = (WrappedComponent) => {
                 navigate('/')
                 return;
             }
-        }, [navigate]);
+        }, [navigate, setLogin]);
 
-        return <WrappedComponent {...props}/>;  
+        return React.createElement(WrappedComponent, props);  
     }
+
+    return AuthenticatedComponent;
 }
 
 export default WithAuthHOC;

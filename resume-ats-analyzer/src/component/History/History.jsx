@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import './history.css'
 import Skeleton from '@mui/material/Skeleton'
-import WithAuthHOC from '../../utils/HOC/withAuthHOC'
+import WithAuthHOC from '../../utils/HOC/WithAuthHOC'
 import axios from '../../utils/axios'
 import { AuthContext } from '../../utils/AuthContext'
 
