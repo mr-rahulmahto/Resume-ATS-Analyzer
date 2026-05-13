@@ -31,6 +31,12 @@ const DashBoard = () => {
       alert("Please fill Job Description & upload Resume")
       return;
     }
+
+    if (!userInfo?._id) {
+      alert("Please login again before analyzing your resume")
+      return;
+    }
+
     const formData = new FormData();
     formData.append("resume", resumeFile);
     formData.append("job_desc", jobDesc);

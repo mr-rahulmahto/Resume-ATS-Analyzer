@@ -11,10 +11,15 @@ const History = () => {
   const { userInfo } = useContext(AuthContext)
 
   useEffect(() => {
+    if (!userInfo?._id) {
+      setData([])
+      return
+    }
+
     const fetchUserData = async () => {
       setLoader(true)
       try {
-        const results = await axios.get(`/api/resume/get/${userInfo?._id}`);
+        const results = await axios.get(`/api/resume/get/${userInfo._id}`);
         //console.log(results.data)
         setData(results.data.resume)
       } catch (err) {
