@@ -5,6 +5,13 @@ exports.register = async(req,res)=>{
     try{
 
         const{name , email , photoUrl} = req.body;
+        if (!name || !email) {
+            return res.status(400).json({
+                error: 'Bad request',
+                message: 'Name and email are required'
+            });
+        }
+
         const userExist = await userModel.findOne({email:email});
         if(!userExist)
         {
@@ -21,7 +28,7 @@ exports.register = async(req,res)=>{
         user:userExist
         })
     }catch(err){
-        console.log(err)
+        console.error('User registration failed:', err)
         res.status(500).json({error: 'Server-error' , message: err.message});
         
     }
